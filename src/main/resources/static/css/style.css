@@ -1,0 +1,27 @@
+#side{
+    background-color: #025159;
+    color: #91BDD9;
+}
+.btn{
+    color: #ffff;
+    background-color: #077F8C;
+}
+.main{
+    background-color: #1491A7;
+    color: #91BDD9;
+    margin-bottom: 10em;
+}
+img{
+    border-radius: 10px;
+}
+nav ,div,div,div,a{
+    color: #ffff;
+}
+.hero.is-link{
+    color: #91BDD9;
+}
+html,body{
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
