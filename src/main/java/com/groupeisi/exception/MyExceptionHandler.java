@@ -26,7 +26,7 @@ public class MyExceptionHandler {
     }
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<GlobalException> handleMethodArgumentNotValideException(RequestException ex){
-        GlobalException globalException =new GlobalException("la valeur saisie est invalid",HttpStatus.BAD_REQUEST, LocalDateTime.now());
+        GlobalException globalException =new GlobalException("la valeur saisie est invalide",HttpStatus.BAD_REQUEST, LocalDateTime.now());
         return  new ResponseEntity<>(globalException,HttpStatus.BAD_REQUEST);
     }
 }
