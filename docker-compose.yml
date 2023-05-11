@@ -11,7 +11,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: user
     ports:
-      - 3306:3306
+      - '3306:3306'
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
@@ -21,7 +21,7 @@ services:
     container_name: container_phpmyadmin-admindb
     image: phpmyadmin/phpmyadmin
     ports:
-      - 8085:80
+      - '8085:80'
     environment:
       MYSQL_ROOT_PASSWORD: root
       PMA_HOST: mysql-admin-db

@@ -1,15 +1,11 @@
 package com.groupeisi.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
-@Data
-@Builder
+@Data@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
