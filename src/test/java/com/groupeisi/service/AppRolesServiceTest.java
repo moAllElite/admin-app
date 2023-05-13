@@ -17,10 +17,6 @@ public class AppRolesServiceTest {
     @Autowired
     private AppRolesService appRolesService;
 
-    @Before
-    public void setUp() throws Exception {
-
-    }
 
     @Test
     public void getAppRoles() {
@@ -33,7 +29,7 @@ public class AppRolesServiceTest {
     @Test
     public void createAppRoles() {
         AppRolesDto appRoles=new AppRolesDto();
-        appRoles.setNom("ROLE_USER");
+        appRoles.setNom("ROLE_ADMIN");
         AppRolesDto appRolesSave=appRolesService.createAppRoles(
                 appRoles
         );
