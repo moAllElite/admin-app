@@ -47,11 +47,11 @@ public class AppRolesService {
 
     @Transactional
     public AppRolesDto createAppRoles(AppRolesDto appRolesDto) {
-
          AppRoles roles=AppRolesDto.toAppRolesEntity(appRolesDto);
          return AppRolesDto.fromAppRoleEntity(iAppRolesRepository.save(roles));
 
     }
+
 
     @Transactional
     public  AppRolesDto updateAppRoles(int id, AppRolesDto appRolesDto) {
@@ -62,12 +62,13 @@ public class AppRolesService {
                     return AppRolesDto.fromAppRoleEntity(
                             iAppRolesRepository.save(roles)
                     );
-                })
+                }
+                )
                 .orElseThrow((() -> new EntityNotFoundException(messageSource.getMessage("role.notfound",
                         new Object[]{id},
                         Locale.getDefault() )))
                 );
-                }
+    }
     @Transactional
     public void deleteAppRoles(int id) {
         try {
