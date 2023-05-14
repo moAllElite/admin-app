@@ -24,7 +24,7 @@ public class AppRolesServiceTest {
     @Test
     public void getAppRoles() {
         List<AppRolesDto> appRolesList=appRolesService.getAppRoles();
-        int expentedLength=2;
+        int expentedLength=3;
         int length=appRolesList.size();
         Assertions.assertEquals(length,expentedLength);
     }
@@ -38,7 +38,7 @@ public class AppRolesServiceTest {
     @Test
     public void createAppRoles() {
         AppRolesDto appRoles=new AppRolesDto();
-        appRoles.setNom("ROLE_ADMIN");
+        appRoles.setNom("ROLE_GARDE");
         AppRolesDto appRolesSave=appRolesService.createAppRoles(
                 appRoles
         );
@@ -47,9 +47,9 @@ public class AppRolesServiceTest {
 
     @Test
     public void updateAppRoles() {
-        String expentedRole="ROLE_TECH";
+        String expentedRole="ROLE_ADMIN";
         AppRolesDto appRoles=new AppRolesDto();
-        appRoles.setNom("ROLE_TECH");
+        appRoles.setNom("ROLE_ADMIN");
         AppRolesDto appRoleSave=appRolesService.updateAppRoles(1,appRoles);
         Assertions.assertEquals(appRoleSave.getNom(),expentedRole);
     }
