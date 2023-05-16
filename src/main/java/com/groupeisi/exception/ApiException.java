@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import java.time.LocalDateTime;
 
 
-@Data
+@Getter@Setter
 
 @AllArgsConstructor
 public class ApiException extends Exception{

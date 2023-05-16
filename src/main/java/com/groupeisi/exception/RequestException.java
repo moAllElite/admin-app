@@ -2,7 +2,7 @@ package com.groupeisi.exception;
 
 import lombok.*;
 import org.springframework.http.HttpStatus;
-@Data
+@Getter
 @AllArgsConstructor
 public class RequestException extends  RuntimeException{
 
