@@ -1,0 +1,53 @@
+version: '3.1'
+services:
+  mysql-person:
+    image: mysql:8.0
+    container_name: container_mysql_person
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: person
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    restart: always
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+
+  phpmyadmin-person:
+    container_name: container_phpmyadmin_person
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8085:80'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      PMA_HOST:  mysql-person
+      PMA_USER: user
+      PMA_PASSWORD: user
+    depends_on:
+      - mysql-person
+    restart: always
+
+  mongo-db:
+    image: mongo
+    container_name: dkrcomp-mongo
+    restart: always
+    ports:
+      - '27017:27017'
+    logging:
+      options:
+        max-size: 1g
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME = user
+      - MONGO_INITDB_ROOT_PASSWORD = user
+
+
+volumes:
+  mysql_data:
+    driver: local
+  phpmyadmin-person:
+    driver: local
+  mongo-db:
+    driver: local

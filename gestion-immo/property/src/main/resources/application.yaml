@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: property
+  data:
+    mongodb:
+      database: property
+      host: localhost
+      port: 27017
+      password: HsW10JIQ4taUFbqf
+      uri: mongodb+srv://${spring.data.mongodb.username}:${spring.data.mongodb.password}@cluster0.dq05muc.mongodb.net/
+      username: mo
+      auto-index-creation: true
+
+server:
+  port: 8082
