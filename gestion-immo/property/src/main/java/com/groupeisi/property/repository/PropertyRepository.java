@@ -7,5 +7,5 @@ import java.util.Optional;
 
 
 public interface PropertyRepository extends MongoRepository<Property, String> {
-    Optional<Property> findByPersonId(Long personId);
+
 }

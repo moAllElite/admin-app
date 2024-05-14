@@ -6,7 +6,7 @@ import lombok.Builder;
 import java.time.LocalDate;
 @Builder
 public record PersonDTO(
-        String id,
+        Long id,
         String fullName,
         String email,
         LocalDate birthDate,

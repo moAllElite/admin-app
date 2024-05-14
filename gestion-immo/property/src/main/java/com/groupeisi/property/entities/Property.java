@@ -22,5 +22,4 @@ public class Property {
     private short numberOfpiece;
     private String localisation;
     private Status status;
-    private Long personId;
 }

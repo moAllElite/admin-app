@@ -63,10 +63,5 @@ public class PropertyServiceImpl implements IPropertyService {
         );
     }
 
-    @Override
-    public PropertyDTO findByIdPerson(Long personId) {
-        return propertyRepository.findByPersonId(personId)
-                .map(mapper::toDTO)
-                .orElseThrow(()->new EntityNotFoundException("No property found"));
-    }
+
 }
